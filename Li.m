@@ -134,3 +134,23 @@ Li_Q_data = [-40	143.0333468
 ];
 T = Li_Q_data(:,1);
 Q_Li = Li_Q_data(:,2);
+
+%% Fit:
+[xData, yData] = prepareCurveData( T, Q_Li );
+
+% Set up fittype and options.
+ft = fittype( 'smoothingspline' );
+
+% Fit model to data.
+[fitresult, gof] = fit( xData, yData, ft );
+
+% Plot fit with data.
+figure( 'Name', 'Q_Li' );
+h = plot( fitresult, xData, yData );
+legend( h, 'Q_Li vs. T', 'Q_Li', 'Location', 'NorthEast', 'Interpreter', 'none' );
+% Label axes
+xlabel( 'T', 'Interpreter', 'none' );
+ylabel( 'Q_Li', 'Interpreter', 'none' );
+grid on
+
+QLi = fitresult;

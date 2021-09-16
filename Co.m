@@ -74,4 +74,24 @@ Co_Q_data = [-38.1909548	0.458011043
 ];
 T = Co_Q_data(:,1);
 Q_Co = Co_Q_data(:,2);
-cftool
+% cftool
+
+%% Fit:
+[xData, yData] = prepareCurveData( T, Q_Co );
+
+% Set up fittype and options.
+ft = fittype( 'smoothingspline' );
+
+% Fit model to data.
+[fitresult, gof] = fit( xData, yData, ft );
+
+% Plot fit with data.
+figure( 'Name', 'untitled fit 1' );
+h = plot( fitresult, xData, yData );
+legend( h, 'Q_Co vs. T', 'untitled fit 1', 'Location', 'NorthEast', 'Interpreter', 'none' );
+% Label axes
+xlabel( 'T', 'Interpreter', 'none' );
+ylabel( 'Q_Co', 'Interpreter', 'none' );
+grid on
+
+QCo = fitresult;

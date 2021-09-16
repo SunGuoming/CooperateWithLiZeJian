@@ -4,7 +4,7 @@ global Q_Li
 global Co_ii
 global Li_ii
 
-T_i = 0;
+T_i = -3.3;
 Q_Co = QCo(T_i);
 Q_Li = QLi(T_i);
 x0 = [1.6218    4.9947    4.1147];
@@ -55,10 +55,19 @@ filename = string(T_i) + '.xls';
 xlswrite(filename,data_M)
 
 figure
+hold on
 plot(dataCo,dataLi,'*')
 xlabel('Co')
 ylabel('Li')
 title(string(T_i))
+
+if T_i<0
+ice_co = 25.32 * T_i / -3.3;
+ice_li = 36.69 * T_i / -20;
+plot([0 ice_co],[ice_li 0]);
+
+end
+
 
 
 
