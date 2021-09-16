@@ -1,17 +1,22 @@
 % º∆À„Ω≈±æ
+clear variables
+Co
+Li
+
 global Q_Co
 global Q_Li
 global Co_ii
 global Li_ii
+
+options=optimset('algorithm','levenberg-marquardt');
+options.MaxFunEvals = 6000;
+options.MaxIter = 6000;
 
 for T_i = -20:1:30
 Q_Co = QCo(T_i);
 Q_Li = QLi(T_i);
 x0 = [1.6218    4.9947    4.1147];
 
-options=optimset('algorithm','levenberg-marquardt');
-options.MaxFunEvals = 6000;
-options.MaxIter = 6000;
 x00 = fsolve(@doubleCoLi,x0,options);
 Co_i = x00(1);
 Li_i = x00(2);
