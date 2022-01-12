@@ -53,11 +53,10 @@ Now just Chinese version. We will add English version in future.
 
 ### 盐的电离
 
-$$\\
-L{i_2}S{O_4} \Leftrightarrow 2L{i^ + } + SO_4^{2 - }\\
-\Delta G = \ln K\\
-Q = {[L{i^ + }]^2}[SO_4^2]
-$$
+
+$$L{i_2}S{O_4} \Leftrightarrow 2L{i^ + } + SO_4^{2 - }$$
+$$\Delta G = \ln K$$
+$$Q = {[L{i^ + }]^2}[SO_4^2]$$
 
 当$L{i_2}S{O_4}$溶液饱和时，有
 
@@ -123,10 +122,8 @@ Li盐的浓度固定，知道Li盐的浓度
 
 两个未知数两个方程，求解即可
 
-$$\begin{array}{l}
-{Q_{Co 2  + }} = [C{o^{ 2  + }}][SO_4^{2 - }]\\
-[SO_4^{2 - }] = [C{o^{ 2  + }}] + 2[L{i^ + }]
-\end{array}$$
+$${Q_{Co 2  + }} = [C{o^{ 2  + }}][SO_4^{2 - }]$$
+$$[SO_4^{2 - }] = [C{o^{ 2  + }}] + 2[L{i^ + }]$$
 
 解出
 $[C{o^{ 2  + }}]$,
